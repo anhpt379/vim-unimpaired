@@ -197,8 +197,10 @@ endfunction
 nnoremap <silent> <Plug>unimpairedBlankUp   :<C-U>call <SID>BlankUp(v:count1)<CR>
 nnoremap <silent> <Plug>unimpairedBlankDown :<C-U>call <SID>BlankDown(v:count1)<CR>
 
-call s:map('n', '[<Space>', '<Plug>unimpairedBlankUp')
-call s:map('n', ']<Space>', '<Plug>unimpairedBlankDown')
+call s:map('n', '[<Enter>', '<Plug>unimpairedBlankUp')
+call s:map('n', ']<Enter>', '<Plug>unimpairedBlankDown')
+call s:map('n', ']<Space>', 'a<Space><Esc><Left>')
+call s:map('n', '[<Space>', 'i<Space><Esc><Right>')
 
 function! s:ExecMove(cmd) abort
   let old_fdm = &foldmethod
